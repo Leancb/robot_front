@@ -1,6 +1,6 @@
 # Projeto de Automação de Testes com Robot Framework
 
-[![Robot CI](https://github.com/Leancb/robot_front/actions/workflows/robot-ci.yml/badge.svg)](https://github.com/Leancb/robot_front/actions/workflows/robot-ci.yml)
+[![Robot CI](https://github.com/Leancb/robot_front/actions/workflows/jekyll-docker.yml/badge.svg)](https://github.com/Leancb/robot_front/actions/workflows/jekyll-docker.yml)
 
 Este projeto demonstra automação de testes utilizando **Robot Framework** com **SeleniumLibrary**.
 O cenário de exemplo realiza uma pesquisa por produtos no site da **Amazon Brasil**.

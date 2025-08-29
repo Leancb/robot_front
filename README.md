@@ -1,6 +1,6 @@
 # Projeto de Automação de Testes com Robot Framework
 
-[![Robot CI](https://github.com/USER/REPO/actions/workflows/robot-ci.yml/badge.svg)](https://github.com/USER/REPO/actions/workflows/robot-ci.yml)
+[![Robot CI](https://github.com/Leancb/robot_front/actions/workflows/robot-ci.yml/badge.svg)](https://github.com/Leancb/robot_front/actions/workflows/robot-ci.yml)
 
 Este projeto demonstra automação de testes utilizando **Robot Framework** com **SeleniumLibrary**.
 O cenário de exemplo realiza uma pesquisa por produtos no site da **Amazon Brasil**.
@@ -61,10 +61,10 @@ Os arquivos `report.html`, `log.html` e `output.xml` ficarão em `reports/`.
 
 ## 🤖 Execução no GitHub Actions
 O workflow **robot-ci.yml** já está configurado para:
-- Instalar Python e dependências
-- Instalar Google Chrome
-- Executar os testes em modo **headless**
-- Publicar `report.html`, `log.html` e `output.xml` como artefatos
+- Instalar Python e dependências;
+- Instalar Google Chrome;
+- Executar os testes em modo **headless**;
+- Publicar `report.html`, `log.html` e `output.xml` como artefatos;
 
 Basta fazer push para a branch `main`. Depois, acesse a aba **Actions** e baixe o artefato **robot-reports**.
 

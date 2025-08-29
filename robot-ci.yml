@@ -1,0 +1,56 @@
+name: Robot CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps (Robot + Selenium)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Install Google Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Versions
+        run: |
+          python --version
+          python -c "import selenium; import robot; import SeleniumLibrary; print('selenium', selenium.__version__); print('robot', robot.__version__); print('seleniumlibrary', SeleniumLibrary.__version__)"
+          google-chrome --version
+
+      - name: Run Robot tests (headless)
+        env:
+          ROBOT_HEADLESS: "1"
+        run: |
+          mkdir -p reports
+          robot -d reports test1.robot
+
+      - name: Upload Robot reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-reports
+          path: |
+            reports/report.html
+            reports/log.html
+            reports/output.xml

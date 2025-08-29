@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-08-28T21:44:03.340547" rpa="false" schemaversion="5">
+<suite id="s1" name="Test1" source="F:\Projetos QA\robot-project\test1.robot">
+<test id="s1-t1" name="Caso de Teste Exemplo" line="6">
+<kw name="Acessar a página inicial" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-28T21:44:03.649573" level="INFO">Opening browser 'headlesschrome' to base url 'https://www.amazon.com.br/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-28T21:44:03.649573" elapsed="3.750007"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-28T21:44:07.399580" elapsed="0.055499"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:twotabsearchtextbox</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-28T21:44:07.455580" elapsed="0.020500"/>
+</kw>
+<status status="PASS" start="2025-08-28T21:44:03.649069" elapsed="3.827011"/>
+</kw>
+<kw name="Pesquisar por celulares e validar o resultado" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-28T21:44:07.477580" level="INFO">Typing text 'celulares' into text field 'id:twotabsearchtextbox'.</msg>
+<arg>id:twotabsearchtextbox</arg>
+<arg>${SEARCH_TERM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-28T21:44:07.477081" elapsed="0.185000"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-28T21:44:07.662580" level="INFO">Clicking button 'id:nav-search-submit-button'.</msg>
+<arg>id:nav-search-submit-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-28T21:44:07.662081" elapsed="2.915099"/>
+</kw>
+<status status="PASS" start="2025-08-28T21:44:07.476581" elapsed="3.100599"/>
+</kw>
+<kw name="Validar Resultados" owner="keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css:div.s-main-slot</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-28T21:44:10.578181" elapsed="0.032998"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-08-28T21:44:10.644204" level="INFO">Current page contains text 'celulares'.</msg>
+<arg>${SEARCH_TERM}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-08-28T21:44:10.611179" elapsed="0.033025"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-08-28T21:44:10.644701" elapsed="2.117434"/>
+</kw>
+<status status="PASS" start="2025-08-28T21:44:10.577678" elapsed="2.184457"/>
+</kw>
+<status status="PASS" start="2025-08-28T21:44:03.648550" elapsed="9.114077"/>
+</test>
+<status status="PASS" start="2025-08-28T21:44:03.342049" elapsed="9.421577"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test1" id="s1" pass="1" fail="0" skip="0">Test1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
